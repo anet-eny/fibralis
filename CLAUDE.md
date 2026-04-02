@@ -42,13 +42,17 @@ Next.js 15 · TypeScript · Tailwind v4 · App Router
 - CSS tokens: `--color-*`, `--font-*`
 - Tailwind classes: use token names (`bg-bg`, `text-cream`, `border-border`)
 
+## Spacing
+
+- Section vertical padding: always `py-section` — never hardcode `py-28` or similar
+
 ## Component pattern
 
 ```tsx
 // components/section-name.tsx
 export default function SectionName() {
   return (
-    <section className="bg-bg py-28">
+    <section className="bg-bg py-section">
       <div className="container">{/* content */}</div>
     </section>
   );
@@ -65,7 +69,7 @@ Define once in `globals.css`:
     width: 100%;
     max-width: 1280px;
     margin-inline: auto;
-    padding-inline: 3rem;
+    padding-inline: clamp(1.5rem, 5vw, 3rem);
   }
 }
 ```
