@@ -1,1 +1,40 @@
 @import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-sans: "Outfit", sans-serif;
+
+  /* Spacing */
+  --spacing-section: clamp(4rem, 8vw, 7rem);
+
+  /* Colors */
+  --color-bg: oklch(0.203 0.01 341.3);
+  --color-surface: oklch(0.168 0.009 307.9);
+  --color-pink: oklch(0.814 0.073 9.2);
+  --color-beige: oklch(0.747 0.061 75.1);
+  --color-cream: oklch(0.95 0.013 63.9);
+  --color-muted: oklch(0.95 0.013 63.9 / 55%);
+  --color-border: oklch(0.95 0.013 63.9 / 10%);
+}
+
+@layer base {
+  body {
+    background-color: theme(colors.bg);
+    color: theme(colors.cream);
+    font-family: theme(fontFamily.sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: clamp(1.5rem, 5vw, 3rem);
+  }
+}
