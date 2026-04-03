@@ -1,8 +1,10 @@
+import Navbar from "@/components/navbar";
+
 export default function Home() {
   return (
     <>
-      {/* <Navbar />
-   <Hero />
+      <Navbar />
+      {/* <Hero />
    <OurScience />
    <Products />
    <WhyUs />
