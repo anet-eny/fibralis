@@ -3,7 +3,7 @@
 ## Overview
 
 B2B biotech landing site for a fictional recombinant collagen peptide ingredient supplier.
-Stack: Next.js 15 · TypeScript · Tailwind v4 · App Router · Outfit font
+Stack: Next.js 16 · TypeScript · Tailwind v4 · App Router · Outfit font
 
 ## Pages
 

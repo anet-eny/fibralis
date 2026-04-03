@@ -2,7 +2,7 @@
 
 ## Stack
 
-Next.js 15 · TypeScript · Tailwind v4 · App Router
+Next.js 16 · TypeScript · Tailwind v4 · App Router
 
 ## Core rules
 
