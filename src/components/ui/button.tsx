@@ -11,20 +11,20 @@ const solidPinkCta = [
 ].join(" ");
 
 const primaryExtra = [
-  "text-[0.85rem] font-medium uppercase tracking-[0.08em]",
-  "px-8 py-[0.85rem] rounded-[2px]",
+  "text-sm font-medium uppercase tracking-widest",
+  "px-8 py-3.5 rounded-sm",
   "transition-[opacity,transform] duration-200",
-  "hover:opacity-[0.85] hover:-translate-y-px",
+  "hover:opacity-90 hover:-translate-y-px",
 ].join(" ");
 
 const compactExtra = [
-  "px-5 py-2 text-[0.8rem] font-medium tracking-[0.06em] rounded-[2px]",
-  "transition-opacity duration-200 hover:opacity-[0.85]",
+  "px-5 py-2 text-xs font-medium tracking-wider rounded-sm",
+  "transition-opacity duration-200 hover:opacity-90",
 ].join(" ");
 
 const ghostClasses = [
   "inline-flex cursor-pointer items-center gap-2",
-  "text-sm font-normal tracking-[0.04em] text-beige",
+  "text-sm font-normal tracking-wider text-beige",
   "transition-colors duration-200 hover:text-cream",
   "no-underline",
   focusRing,
