@@ -92,7 +92,7 @@ export default function Hero() {
       onPointerEnter={onPointerEnter}
       onPointerLeave={onPointerLeave}
     >
-      {/* One shared transform so bg + fg stay pixel-aligned (same scale/crop as object-cover). */}
+      {/* One shared transform so bg + fg stay pixel-aligned; mobile: ~45% X anchor, md+: object-right (prototype). */}
       <div
         className="pointer-events-none absolute inset-0 min-h-dvh overflow-hidden"
         aria-hidden
@@ -109,7 +109,7 @@ export default function Hero() {
               alt=""
               fill
               priority
-              className="object-cover object-center"
+              className="object-cover object-[45%_center] md:object-right"
               sizes="100vw"
             />
           </div>
@@ -120,18 +120,23 @@ export default function Hero() {
             }`}
             style={maskStyle}
           >
-            <div className="absolute inset-0 opacity-30">
+            <div className="absolute inset-0 opacity-90">
               <Image
                 src="/images/hero_fg.avif"
                 alt=""
                 fill
-                className="object-cover object-center"
+                className="object-cover object-[45%_center] md:object-right"
                 sizes="100vw"
               />
             </div>
           </div>
         </div>
       </div>
+
+      <div
+        className="pointer-events-none absolute inset-0 z-1 bg-black/20"
+        aria-hidden
+      />
 
       <div className="relative z-10 flex min-h-dvh items-center pt-18">
         <div className="container w-full">
@@ -143,7 +148,7 @@ export default function Hero() {
               <span className="text-pink not-italic">Collagen</span> Without
               Compromise
             </h1>
-            <p className="mb-10 max-w-md text-base font-light leading-relaxed text-muted">
+            <p className="mb-10 max-w-sm text-base font-light leading-relaxed text-muted">
               {HERO_SUB}
             </p>
             <Button variant="primary" href="/products">
