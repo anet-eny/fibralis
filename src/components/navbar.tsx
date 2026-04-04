@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import Logo from "@/components/logo";
 import { Button } from "@/components/ui/button";
 
 const navLinks: { label: string; href: string }[] = [
@@ -27,17 +27,10 @@ export default function Navbar() {
         <Link
           href="/"
           className="flex shrink-0 items-center"
+          aria-label="Fibralis home"
           onClick={() => setOpen(false)}
         >
-          <Image
-            src="/images/logo.svg"
-            alt="Fibralis"
-            width={841}
-            height={253}
-            className="h-9 w-auto brightness-0 invert"
-            style={{ width: "auto", height: "2.25rem" }}
-            priority
-          />
+          <Logo className="h-9 w-auto shrink-0 text-cream" />
         </Link>
 
         <button
