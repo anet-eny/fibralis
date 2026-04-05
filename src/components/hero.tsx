@@ -139,7 +139,7 @@ export default function Hero() {
         aria-hidden
       />
 
-      <div className="relative z-10 flex min-h-dvh items-center pt-18">
+      <div className="relative z-10 flex min-h-dvh items-start pt-32 sm:pt-40">
         <div className="container w-full">
           <div className="max-w-lg">
             <SectionLabel variant="hero">
