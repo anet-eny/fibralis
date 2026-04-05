@@ -5,11 +5,11 @@ export const sectionBody =
   "mb-6 text-base font-light leading-loose text-muted last:mb-0";
 
 export const sectionLabelClasses = {
-  hero: "mb-6 text-xs font-medium uppercase tracking-widest text-pink",
+  hero: "mb-6 text-xs font-medium uppercase tracking-[0.2em] text-pink",
   sectionMuted:
-    "mb-6 text-base font-light uppercase tracking-widest leading-loose text-muted",
+    "mb-6 text-base font-light uppercase tracking-[0.2em] leading-loose text-muted",
   sectionCompact:
-    "mb-5 text-xs font-medium uppercase tracking-widest text-beige",
+    "mb-5 text-xs font-medium uppercase tracking-[0.2em] text-beige",
 } as const;
 
 export type SectionLabelVariant = keyof typeof sectionLabelClasses;
