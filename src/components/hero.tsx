@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { SectionLabel } from "@/components/ui/section-label";
 
 const HERO_SUB =
   "AI-designed collagen peptides and bioactive ingredients — engineered for consistency, produced at scale, delivered to the world's leading formulators.";
@@ -141,9 +142,9 @@ export default function Hero() {
       <div className="relative z-10 flex min-h-dvh items-center pt-18">
         <div className="container w-full">
           <div className="max-w-lg">
-            <p className="mb-6 text-xs font-medium uppercase tracking-widest text-pink">
+            <SectionLabel variant="hero">
               Recombinant Collagen Ingredients
-            </p>
+            </SectionLabel>
             <h1 className="mb-6 text-4xl font-light leading-tight tracking-tight text-cream md:text-5xl lg:text-6xl">
               <span className="text-pink not-italic">Collagen</span> Without
               Compromise
