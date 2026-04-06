@@ -8,7 +8,7 @@ export type ProductCardProps = {
 };
 
 const baseCardClasses = [
-  "bg-bg p-8 transition-colors duration-300",
+  "group bg-bg p-8 transition-colors duration-300",
   "hover:bg-cream/5",
 ].join(" ");
 
@@ -23,7 +23,7 @@ export function ProductCard({
   return (
     <article className={classes}>
       <ProductTag>{tag}</ProductTag>
-      <h3 className="mb-3 text-xl font-normal tracking-tight text-cream">
+      <h3 className="mb-3 text-xl font-normal tracking-tight text-cream transition-colors duration-200 group-hover:text-pink">
         {name}
       </h3>
       <p className="text-sm font-light leading-relaxed text-muted">{description}</p>
