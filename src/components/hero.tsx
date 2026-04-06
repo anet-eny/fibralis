@@ -145,7 +145,7 @@ export default function Hero() {
             <SectionLabel variant="hero">
               Recombinant Collagen Ingredients
             </SectionLabel>
-            <h1 className="mb-6 text-4xl font-light leading-tight tracking-tight text-cream md:text-5xl lg:text-6xl">
+            <h1 className="mb-6 text-[clamp(2.6rem,5vw,4.2rem)] font-light leading-tight tracking-tight text-cream">
               <span className="text-pink not-italic">Collagen</span> Without
               Compromise
             </h1>
