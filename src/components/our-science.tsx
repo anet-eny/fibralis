@@ -38,12 +38,12 @@ export default function OurScience() {
             </div>
           </div>
 
-          <div className="relative h-[260px] overflow-hidden rounded border border-border lg:h-[380px]">
+          <div className="relative overflow-hidden rounded border border-border aspect-4/3 lg:aspect-auto lg:h-[380px]">
             <Image
               src="/images/vials.avif"
               alt=""
               fill
-              className="object-cover"
+              className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
