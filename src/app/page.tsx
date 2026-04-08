@@ -1,4 +1,5 @@
 import Hero from "@/components/hero";
+import MeetUs from "@/components/meet-us";
 import Navbar from "@/components/navbar";
 import OurScience from "@/components/our-science";
 import Products from "@/components/products";
@@ -12,6 +13,7 @@ export default function Home() {
       <OurScience />
       <Products />
       <WhyUs />
+      <MeetUs />
     </>
   );
 }
