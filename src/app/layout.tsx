@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} min-h-dvh antialiased`}>
+      <html lang="en" data-scroll-behavior="smooth" className={`${outfit.variable} min-h-dvh antialiased`}>
       <body className="min-h-dvh">{children}</body>
     </html>
   );
