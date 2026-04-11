@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fibralis — Our Science</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg-dark:   #1A1518;
+    --bg-deeper: #100E12;
+    --pink:      #EDAFB8;
+    --beige:     #C4A882;
+    --cream:     #F5EDE6;
+    --muted:     rgba(245,237,230,0.55);
+    --border:    rgba(245,237,230,0.1);
+    --font:      'Outfit', sans-serif;
+    --max-w:     1280px;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font); background: var(--bg-dark); color: var(--cream); overflow-x: hidden; }
+
+  .container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 3rem; }
+  @media (max-width: 768px) { .container { padding: 0 1.5rem; } }
+
+  /* BUTTONS */
+  .btn-primary { display: inline-block; background: var(--pink); color: var(--bg-dark); font-family: var(--font); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 2px; text-decoration: none; border: none; cursor: pointer; transition: opacity 0.2s, transform 0.2s; }
+  .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+  .btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--beige); font-size: 0.875rem; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; transition: color 0.2s; }
+  .btn-ghost:hover { color: var(--cream); }
+  .btn-ghost::after { content: '\2192'; }
+
+  /* SECTION BASE */
+  .section-wrap { padding: 7rem 0; }
+  .section-label { font-size: 12px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--beige); margin-bottom: 24px; }
+  .section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300; letter-spacing: -0.02em; line-height: 1.15; color: var(--cream); margin-bottom: 1.5rem; }
+  .divider { width: 40px; height: 1px; background: var(--pink); opacity: 0.4; margin: 1.5rem 0; }
+  @media (max-width: 768px) { .section-wrap { padding: 4rem 0; } }
+
+  /* HERO — #1A1518, two-column with image placeholder */
+  .hero {
+    position: relative; width: 100%; min-height: 56vh; display: flex; align-items: center;
+    background: var(--bg-dark); border-bottom: 1px solid var(--border); overflow: hidden;
+    padding-bottom: 5rem; padding-top: 6rem;
+  }
+  .hero-noise {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image: radial-gradient(ellipse 60% 70% at 75% 50%, rgba(237,175,184,0.05) 0%, transparent 65%);
+  }
+  .hero-content { position: relative; z-index: 2; width: 100%; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pink); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s 0.15s ease forwards; display: flex; align-items: center; gap: 0.75rem; }
+  .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--pink); opacity: 0.6; }
+  .hero-title { font-size: clamp(2rem, 3.2vw, 3.2rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.025em; color: var(--cream); margin-bottom: 1.75rem; opacity: 0; animation: fadeUp 0.8s 0.3s ease forwards; }
+  .hero-title em { font-style: normal; color: var(--pink); }
+  .hero-sub { font-size: 1rem; font-weight: 300; line-height: 1.8; color: var(--muted); max-width: 460px; opacity: 0; animation: fadeUp 0.8s 0.45s ease forwards; }
+  .hero-image {
+    height: 360px; border: 1px solid var(--border); border-radius: 2px;
+    background: rgba(237,175,184,0.02);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden; opacity: 0; animation: fadeUp 0.8s 0.5s ease forwards;
+  }
+  .hero-image::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(237,175,184,0.04) 0%, transparent 60%);
+  }
+  .hero-image span { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,237,230,0.15); }
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-image { display: none; }
+  }
+
+  /* CHALLENGE */
+  .challenge { background: var(--bg-deeper); border-bottom: 1px solid var(--border); }
+  .challenge .container { display: grid; grid-template-columns: 280px 1fr; gap: 6rem; align-items: start; }
+  .challenge-left { padding-top: 0.25rem; }
+  .challenge-body p { font-size: 1rem; font-weight: 300; line-height: 1.85; color: var(--muted); margin-bottom: 1.5rem; }
+  .challenge-body p:last-child { margin-bottom: 0; }
+  .challenge-body em { font-style: italic; color: rgba(245,237,230,0.75); }
+  .callout {
+    margin-top: 3rem; padding: 2.5rem; border: 1px solid var(--border); border-left: 2px solid rgba(237,175,184,0.5);
+    background: rgba(237,175,184,0.03);
+  }
+  .callout blockquote { font-size: 1.05rem; font-weight: 300; font-style: italic; line-height: 1.65; color: rgba(245,237,230,0.8); }
+  .callout blockquote em { font-style: normal; color: var(--pink); }
+  @media (max-width: 900px) { .challenge .container { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+  /* PILLARS */
+  .pillars { background: var(--bg-dark); border-bottom: 1px solid var(--border); }
+  .pillars-top { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; margin-bottom: 4rem; }
+  .pillars-top .pillars-text .section-title { margin-bottom: 1.5rem; }
+  .pillars-text p { font-size: 1rem; font-weight: 300; line-height: 1.8; color: var(--muted); margin-bottom: 0; }
+  .pillars-image {
+    height: 340px; border: 1px solid var(--border); border-radius: 2px;
+    background: rgba(237,175,184,0.02);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .pillars-image::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(225deg, rgba(237,175,184,0.04) 0%, transparent 60%);
+  }
+  .pillars-image span { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,237,230,0.15); }
+  .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--border); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
+  .pillar { background: var(--bg-dark); padding: 2.5rem 2.25rem 3rem; transition: background 0.3s; position: relative; }
+  .pillar:hover { background: rgba(237,175,184,0.04); }
+  .pillar-num { font-size: 12px; font-weight: 500; letter-spacing: 0.18em; color: var(--pink); opacity: 0.7; margin-bottom: 1.75rem; display: flex; align-items: center; gap: 0.75rem; }
+  .pillar-num::after { content: ''; flex: 1; height: 1px; background: rgba(237,175,184,0.2); }
+  .pillar h3 { font-size: 1.05rem; font-weight: 400; color: var(--cream); line-height: 1.35; margin-bottom: 1rem; }
+  .pillar p { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--muted); }
+  .pillar p em { font-style: italic; color: rgba(245,237,230,0.7); }
+  @media (max-width: 900px) {
+    .pillars-top { grid-template-columns: 1fr; gap: 2rem; }
+    .pillars-image { display: none; }
+    .pillars-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ADVANTAGES — restyled as full-width stat strip + cards */
+  .advantages { background: var(--bg-deeper); border-bottom: 1px solid var(--border); }
+  .adv-intro { display: grid; grid-template-columns: 280px 1fr; gap: 6rem; align-items: end; margin-bottom: 4rem; }
+  .adv-intro > div .section-title { margin-bottom: 0; }
+  .adv-intro p { font-size: 1rem; font-weight: 300; line-height: 1.8; color: var(--muted); margin-bottom: 0; }
+  .adv-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5px; background: var(--border); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
+  .adv-item { background: var(--bg-deeper); padding: 2.25rem 2rem 2.5rem; transition: background 0.25s; }
+  .adv-item:hover { background: rgba(237,175,184,0.03); }
+  .adv-icon { width: 32px; height: 32px; margin-bottom: 1.5rem; border: 1px solid rgba(237,175,184,0.25); border-radius: 2px; display: flex; align-items: center; justify-content: center; }
+  .adv-icon svg { width: 14px; height: 14px; stroke: var(--pink); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .adv-item h4 { font-size: 14px; font-weight: 500; color: var(--cream); margin-bottom: 0.65rem; line-height: 1.3; }
+  .adv-item p { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--muted); }
+  .adv-item p em { font-style: italic; }
+  @media (max-width: 900px) {
+    .adv-intro { grid-template-columns: 1fr; gap: 2rem; }
+    .adv-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) { .adv-grid { grid-template-columns: 1fr; } }
+
+  /* PORTFOLIO TEASER */
+  .portfolio-teaser { background: var(--bg-dark); border-bottom: 1px solid var(--border); }
+  .teaser-inner { border: 1px solid var(--border); border-radius: 2px; padding: 3rem 3.5rem; display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; background: rgba(237,175,184,0.02); }
+  .teaser-label { font-size: 12px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--beige); margin-bottom: 0.85rem; }
+  .teaser-title { font-size: 1.4rem; font-weight: 300; color: var(--cream); margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+  .teaser-desc { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--muted); margin-bottom: 1.5rem; max-width: 520px; }
+  .teaser-desc em { font-style: italic; color: rgba(245,237,230,0.7); }
+  .mol-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .mol-pill { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 2px; border: 1px solid; white-space: nowrap; }
+  .pill-teal   { color: var(--pink); border-color: rgba(237,175,184,0.35); background: rgba(237,175,184,0.05); }
+  .pill-purple { color: var(--pink); border-color: rgba(237,175,184,0.35); background: rgba(237,175,184,0.05); }
+  .pill-pink   { color: var(--pink); border-color: rgba(237,175,184,0.35); background: rgba(237,175,184,0.05); }
+  @media (max-width: 860px) { .teaser-inner { grid-template-columns: 1fr; } }
+
+  /* RESEARCH */
+  .research { background: var(--bg-deeper); border-bottom: 1px solid var(--border); }
+  .research-header { display: grid; grid-template-columns: 280px 1fr; gap: 6rem; align-items: end; margin-bottom: 4rem; }
+  .research-header > div .section-title { margin-bottom: 0; }
+  .research-header p { font-size: 1rem; font-weight: 300; line-height: 1.8; color: var(--muted); margin-bottom: 0; }
+  .research-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5px; background: var(--border); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
+  .research-card { background: var(--bg-deeper); padding: 2.5rem 2.25rem 2.75rem; display: flex; flex-direction: column; transition: background 0.3s; }
+  .research-card:hover { background: rgba(237,175,184,0.03); }
+  .research-stage { display: inline-block; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 2px; margin-bottom: 1.75rem; width: fit-content; }
+  .stage-lead      { color: var(--pink); border: 1px solid rgba(237,175,184,0.35); background: rgba(237,175,184,0.07); }
+  .stage-discovery { color: var(--pink); border: 1px solid rgba(237,175,184,0.35); background: rgba(237,175,184,0.07); }
+  .research-card h3 { font-size: 1.15rem; font-weight: 400; color: var(--cream); line-height: 1.3; margin-bottom: 0.4rem; letter-spacing: -0.01em; }
+  .research-card .mol-sub { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,237,230,0.28); margin-bottom: 1.25rem; }
+  .research-card p { font-size: 14px; font-weight: 300; line-height: 1.78; color: var(--muted); flex: 1; margin-bottom: 2rem; }
+  .card-divider { height: 1px; background: var(--border); margin-bottom: 1.5rem; }
+  .card-meta { display: flex; flex-direction: column; gap: 0.55rem; }
+  .meta-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; gap: 1rem; }
+  .meta-label { color: var(--beige); font-weight: 300; flex-shrink: 0; }
+  .meta-value { color: rgba(245,237,230,0.75); font-weight: 400; text-align: right; }
+  @media (max-width: 900px) {
+    .research-header { grid-template-columns: 1fr; gap: 1.5rem; }
+    .research-grid { grid-template-columns: 1fr; }
+  }
+
+  /* CTA — no border-top inside, border-bottom on section handles separation */
+  .cta-section { background: var(--bg-dark); border-bottom: 1px solid var(--border); }
+  .cta-inner { display: grid; grid-template-columns: 1fr auto; gap: 5rem; align-items: center; padding: 7rem 0; }
+  .cta-inner h2 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 300; letter-spacing: -0.02em; color: var(--cream); line-height: 1.2; margin-bottom: 0.85rem; }
+  .cta-inner h2 em { font-style: normal; color: var(--pink); }
+  .cta-inner p { font-size: 0.95rem; font-weight: 300; line-height: 1.8; color: var(--muted); max-width: 500px; }
+  @media (max-width: 768px) { .cta-inner { grid-template-columns: 1fr; gap: 2rem; } }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <p class="hero-eyebrow">Our Science</p>
+          <h1 class="hero-title">Precision collagen,<br>engineered from<br>sequence to <em>function</em></h1>
+          <p class="hero-sub">Fibralis develops precisely defined collagen proteins and bioactive peptides produced in recombinant <em>E. coli</em> — fully animal-free, with controlled triple-helical structure and scalable manufacturing.</p>
+        </div>
+        <div class="hero-image">
+          <span>Image placeholder</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHALLENGE -->
+<section class="challenge section-wrap">
+  <div class="container">
+    <div class="challenge-left reveal">
+      <p class="section-label">The challenge</p>
+      <h2 class="section-title">Why is collagen so difficult to replace?</h2>
+    </div>
+    <div class="challenge-body reveal reveal-delay-1">
+      <p>Collagen is the most abundant protein in the human body, forming the structural backbone of skin, bone, cartilage, and connective tissue. Its biological activity depends on a precise triple-helical conformation — a demanding fold that standard recombinant expression systems struggle to reproduce reliably.</p>
+      <p>The core difficulty lies in post-translational hydroxylation of proline residues, a modification essential for triple-helix thermal stability that does not occur naturally in <em>E. coli</em>. Without it, the triple helix unfolds at physiological temperature, losing both structural integrity and receptor-binding activity.</p>
+      <p>Conventional animal-derived collagen sidesteps this problem — but introduces significant lot-to-lot variability, safety concerns around prion transmission and viral contamination, and ethical constraints increasingly incompatible with modern biotherapeutics and precision cosmetics.</p>
+      <div class="callout">
+        <blockquote>"The biological activity of collagen depends not just on sequence, but on <em>fold</em> — and fold depends on engineering."</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS / OUR APPROACH -->
+<section class="pillars section-wrap">
+  <div class="container">
+    <div class="pillars-top reveal">
+      <div class="pillars-text">
+        <p class="section-label">Our approach</p>
+        <h2 class="section-title">How we engineer collagen that works</h2>
+        <p>We combine sequence engineering, structural domain design, and optimised <em>E. coli</em> expression to produce bioactive collagen molecules that are reproducible, animal-free, and functionally equivalent to their human counterparts.</p>
+      </div>
+      <div class="pillars-image">
+        <span>Image placeholder</span>
+      </div>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar reveal">
+        <div class="pillar-num">01</div>
+        <h3>Hydroxylation-independent triple-helix stability</h3>
+        <p>Rational substitution of hydroxyproline-dependent positions with (Gly-Pro-Pro)ₙ repeat motifs enables stable triple-helix formation in <em>E. coli</em> at physiological temperature — without any enzymatic modification.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-1">
+        <div class="pillar-num">02</div>
+        <h3>Nucleation domain engineering</h3>
+        <p>Fusion of trimerisation-inducing domains at the termini of the collagen sequence drives spontaneous and efficient triple-helix folding, increasing the yield of correctly assembled trimeric product.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-2">
+        <div class="pillar-num">03</div>
+        <h3>Sequence-defined bioactivity</h3>
+        <p>Every molecule is engineered at the sequence level to display defined integrin-binding, cell-signalling, or matrix-scaffolding activity — enabling targeted biological function without batch-to-batch variability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- RESEARCH -->
+<section class="research section-wrap">
+  <div class="container">
+    <div class="research-header reveal">
+      <div>
+        <p class="section-label">Research</p>
+        <h2 class="section-title">Expanding the collagen sequence space</h2>
+      </div>
+      <p>Beyond our current portfolio, Fibralis is developing a new generation of collagen-derived molecules targeting receptor interactions and signalling pathways that remain largely unexplored in therapeutic and cosmetic contexts. Our discovery programme draws on systematic mapping of bioactive motifs across collagen type I and type III sequences.</p>
+    </div>
+    <div class="research-grid">
+
+      <div class="research-card reveal">
+        <span class="research-stage stage-lead">Lead optimisation</span>
+        <h3>GLOGER/GAOGER integrin mimic</h3>
+        <div class="mol-sub">α1β1-selective · COL1A1-derived</div>
+        <p>De novo collagen-mimetic peptides built on the GLOGER and GAOGER scaffolds — high-affinity sites within the α1 chain of collagen I. Unlike GFOGER, which preferentially engages α2β1, these sequences show selectivity for the α1β1 integrin subtype, expressed predominantly on fibroblasts in inflammatory and fibrotic states. A selective α1β1 agonist opens a mechanistic route to anti-scarring formulations not accessible through existing integrin-targeting peptides.</p>
+        <div class="card-divider"></div>
+        <div class="card-meta">
+          <div class="meta-row"><span class="meta-label">Target receptor</span><span class="meta-value">Integrin α1β1</span></div>
+          <div class="meta-row"><span class="meta-label">Application area</span><span class="meta-value">Anti-scarring · wound healing</span></div>
+          <div class="meta-row"><span class="meta-label">Differentiator</span><span class="meta-value">First α1β1-selective collagen peptide</span></div>
+        </div>
+      </div>
+
+      <div class="research-card reveal reveal-delay-1">
+        <span class="research-stage stage-discovery">Discovery</span>
+        <h3>NTx-derived pro-angiogenic peptide</h3>
+        <div class="mol-sub">αvβ3-targeting · N-telopeptide origin</div>
+        <p>A bioactive peptide derived from the N-telopeptide region of collagen I, engineered to engage αvβ3 integrin — expressed on endothelial cells and regulating angiogenesis and neovascularisation. While NTx fragments are established bone resorption biomarkers, their activity at αvβ3 has not been exploited therapeutically. A de novo αvβ3-targeting collagen peptide addresses pro-angiogenic signalling in wound care and skin nutrition, complementing the existing portfolio without overlap.</p>
+        <div class="card-divider"></div>
+        <div class="card-meta">
+          <div class="meta-row"><span class="meta-label">Target receptor</span><span class="meta-value">Integrin αvβ3</span></div>
+          <div class="meta-row"><span class="meta-label">Application area</span><span class="meta-value">Wound care · skin vascularisation</span></div>
+          <div class="meta-row"><span class="meta-label">Differentiator</span><span class="meta-value">Novel αvβ3 activity from telopeptide</span></div>
+        </div>
+      </div>
+
+      <div class="research-card reveal">
+        <span class="research-stage stage-discovery">Discovery</span>
+        <h3>GPOGES — first COL1A2-derived peptide</h3>
+        <div class="mol-sub">α1β1-selective · COL1A2 α2 chain</div>
+        <p>The vast majority of commercial collagen peptides are derived exclusively from the COL1A1 α1 chain. GPOGES is the functional equivalent of GFOGER in the COL1A2 α2 chain — with a distinct integrin binding profile favouring α1β1 over α2β1. As a selective modulator of fibroblast activation in inflammatory contexts, GPOGES represents an underexplored source of patentable peptide chemistry and a differentiated claim for anti-inflammatory skin formulations.</p>
+        <div class="card-divider"></div>
+        <div class="card-meta">
+          <div class="meta-row"><span class="meta-label">Target receptor</span><span class="meta-value">Integrin α1β1</span></div>
+          <div class="meta-row"><span class="meta-label">Application area</span><span class="meta-value">Anti-inflammatory · precision cosmetics</span></div>
+          <div class="meta-row"><span class="meta-label">Differentiator</span><span class="meta-value">First peptide derived from COL1A2</span></div>
+        </div>
+      </div>
+
+      <div class="research-card reveal reveal-delay-1">
+        <span class="research-stage stage-discovery">Discovery</span>
+        <h3>GPOGPSGPR — collagen III DDR1 mimic</h3>
+        <div class="mol-sub">DDR1-activating · COL3A1-derived</div>
+        <p>Collagen type III is the predominant collagen of foetal and juvenile skin — the molecular basis of its elasticity and resilience. As the COL1:COL3 ratio shifts with age, skin loses pliability. GPOGPSGPR is a sequence motif from the COL3A1 helix activating DDR1, a receptor tyrosine kinase expressed on epithelial cells regulating the basement membrane. A peptide stimulating COL3A1-associated signalling carries a substantiated "restore juvenescent collagen profile" claim — currently absent from the market.</p>
+        <div class="card-divider"></div>
+        <div class="card-meta">
+          <div class="meta-row"><span class="meta-label">Target receptor</span><span class="meta-value">DDR1</span></div>
+          <div class="meta-row"><span class="meta-label">Application area</span><span class="meta-value">Anti-ageing · skin elasticity</span></div>
+          <div class="meta-row"><span class="meta-label">Differentiator</span><span class="meta-value">Only COL3A1-derived cosmetic peptide</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO TEASER -->
+<section class="portfolio-teaser section-wrap">
+  <div class="container">
+    <div class="teaser-inner reveal">
+      <div>
+        <div class="teaser-label">Current portfolio</div>
+        <div class="teaser-title">Three molecules available now</div>
+        <p class="teaser-desc">All produced in <em>E. coli</em>, animal-free, and supplied with full analytical characterisation. Available for research and cosmetic applications.</p>
+        <div class="mol-pills">
+          <span class="mol-pill pill-teal">CollaGen-X1 — triple helix</span>
+          <span class="mol-pill pill-purple">GFOGER-Pro — bioactive peptide</span>
+          <span class="mol-pill pill-pink">Pal-KTTKS+ — signalling peptide</span>
+        </div>
+      </div>
+      <a href="#" class="btn-primary">View products</a>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="advantages section-wrap">
+  <div class="container">
+    <div class="adv-intro reveal">
+      <div>
+        <p class="section-label">Why Fibralis</p>
+        <h2 class="section-title">Beyond animal-derived collagen</h2>
+      </div>
+      <p>Animal-extracted collagen is variable, ethically constrained, and increasingly incompatible with the demands of modern formulation. Fibralis offers a fully defined, reproducible alternative — without compromise on bioactivity.</p>
+    </div>
+    <div class="adv-grid reveal reveal-delay-1">
+      <div class="adv-item">
+        <div class="adv-icon">
+          <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h4>Defined sequence</h4>
+        <p>Exact amino acid sequence — no lot-to-lot variability in contrast to bovine or porcine tissue extracts.</p>
+      </div>
+      <div class="adv-item">
+        <div class="adv-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Safety profile</h4>
+        <p>Eliminates prion transmission risk, viral contamination, and zoonotic pathogens from animal-derived sources.</p>
+      </div>
+      <div class="adv-item">
+        <div class="adv-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></svg>
+        </div>
+        <h4>Scalable manufacturing</h4>
+        <p>Fermentation-based <em>E. coli</em> production enables GMP-compatible scale-up independent of tissue sourcing.</p>
+      </div>
+      <div class="adv-item">
+        <div class="adv-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/></svg>
+        </div>
+        <h4>Engineered functionality</h4>
+        <p>Integrin-binding motifs, protease-cleavage sites, and conjugation handles introduced precisely at sequence level.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div>
+        <h2>Partner with <em>Fibralis</em></h2>
+        <p>We welcome enquiries from academic groups, biotech companies, and cosmetic formulators interested in research supply, custom molecule design, or regenerative medicine development partnerships.</p>
+      </div>
+      <a href="#" class="btn-primary">Contact us</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
