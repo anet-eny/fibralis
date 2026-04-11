@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import ScienceHero from "@/components/science/science-hero";
 
 export const metadata: Metadata = {
   title: "Our Science",
@@ -13,7 +14,7 @@ export default function SciencePage() {
     <>
       <Navbar />
       <main>
-        {/* TODO: ScienceHero */}
+        <ScienceHero />
         {/* TODO: Challenge */}
         {/* TODO: Pillars */}
         {/* TODO: Research */}
