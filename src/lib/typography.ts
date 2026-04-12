@@ -13,3 +13,7 @@ export const sectionLabelClasses = {
 } as const;
 
 export type SectionLabelVariant = keyof typeof sectionLabelClasses;
+
+/** Body copy for compact science cards (Our Approach pillars, Advantages, …). */
+export const scienceCardBody =
+  "text-sm font-light leading-[1.75] text-muted [&_em]:italic";
