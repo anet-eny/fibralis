@@ -22,7 +22,7 @@ export function ProductCard({
 
   return (
     <article className={classes}>
-      <ProductTag>{tag}</ProductTag>
+      <ProductTag className="mb-6">{tag}</ProductTag>
       <h3 className="mb-3 text-xl font-normal tracking-tight text-cream transition-colors duration-200 group-hover:text-pink">
         {name}
       </h3>

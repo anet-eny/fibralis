@@ -7,7 +7,7 @@ export type ProductTagProps = {
 };
 
 const productTagClasses =
-  "mb-6 inline-block rounded-sm border border-pink/30 px-2.5 py-1 text-xs font-medium uppercase tracking-[0.15em] text-pink";
+  "inline-block rounded-sm border border-pink/30 px-2.5 py-1 text-xs font-medium uppercase tracking-[0.15em] text-pink";
 
 export function ProductTag({ children, className, id }: ProductTagProps) {
   const classes = [productTagClasses, className].filter(Boolean).join(" ");
