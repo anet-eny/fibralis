@@ -13,7 +13,7 @@ export default function OurScience() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <SectionLabel variant="sectionMuted">Our Science</SectionLabel>
-            <h2 className={sectionTitle}>
+            <h2 className={`${sectionTitle} mb-6`}>
               A New Generation
               <br />
               of Collagen

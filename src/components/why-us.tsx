@@ -16,7 +16,7 @@ export default function WhyUs() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <SectionLabel variant="sectionMuted">Why Fibralis</SectionLabel>
-            <h2 className={sectionTitle}>
+            <h2 className={`${sectionTitle} mb-6`}>
               Engineered for
               <br />
               Demanding Formulators

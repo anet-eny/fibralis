@@ -1,5 +1,5 @@
 export const sectionTitle =
-  "mb-6 text-[clamp(1.8rem,3vw,2.6rem)] font-light leading-tight tracking-tight text-cream";
+  "text-[clamp(1.8rem,3vw,2.6rem)] font-light leading-tight tracking-tight text-cream";
 
 export const sectionBody =
   "mb-6 text-base font-light leading-loose text-muted last:mb-0";
