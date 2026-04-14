@@ -37,7 +37,7 @@ export default function Characterisation() {
       <div className="container">
         <div className="mb-12 grid grid-cols-1 items-end gap-8 lg:mb-16 lg:grid-cols-[280px_1fr] lg:gap-24">
           <div>
-            <SectionLabel variant="sectionCompact">
+            <SectionLabel variant="sectionMuted">
               Activity & Characterisation
             </SectionLabel>
             <h2 className={sectionTitle}>Validated at every level</h2>

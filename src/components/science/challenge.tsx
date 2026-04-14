@@ -6,7 +6,7 @@ export default function Challenge() {
     <section className="border-b border-border bg-surface py-section">
       <div className="container grid grid-cols-1 items-start gap-10 md:grid-cols-[280px_1fr] md:gap-24">
         <div className="pt-1">
-          <SectionLabel variant="sectionCompact">The challenge</SectionLabel>
+          <SectionLabel variant="sectionMuted">The challenge</SectionLabel>
           <h2 className={sectionTitle}>
             From literature to molecule — the engineering gap in
             collagen-derived bioactives

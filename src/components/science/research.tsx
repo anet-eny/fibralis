@@ -65,8 +65,8 @@ const researchItems = [
         equivalent of GFOGER in the COL1A2 α2 chain — with a distinct integrin
         binding profile favouring α1β1 over α2β1. As a selective modulator of
         fibroblast activation in inflammatory contexts, GPOGES represents an
-        underexplored source of patentable peptide chemistry and a differentiated
-        claim for anti-inflammatory skin formulations.
+        underexplored source of patentable peptide chemistry and a
+        differentiated claim for anti-inflammatory skin formulations.
       </>
     ),
     meta: [
@@ -111,17 +111,19 @@ export default function Research() {
       <div className="container">
         <div className="mb-12 grid grid-cols-1 items-end gap-8 lg:mb-16 lg:grid-cols-[280px_1fr] lg:gap-24">
           <div>
-            <SectionLabel variant="sectionCompact">Research</SectionLabel>
-            <h2 className={sectionTitle}>Expanding the collagen sequence space</h2>
+            <SectionLabel variant="sectionMuted">Research</SectionLabel>
+            <h2 className={sectionTitle}>
+              Expanding the collagen sequence space
+            </h2>
           </div>
 
           <p className="text-base font-light leading-[1.8] text-muted">
-            Beyond our current portfolio, Fibralis is developing a new generation
-            of collagen-derived molecules targeting receptor interactions and
-            signalling pathways that remain largely unexplored in therapeutic and
-            cosmetic contexts. Our discovery programme draws on systematic
-            mapping of bioactive motifs across collagen type I and type III
-            sequences.
+            Beyond our current portfolio, Fibralis is developing a new
+            generation of collagen-derived molecules targeting receptor
+            interactions and signalling pathways that remain largely unexplored
+            in therapeutic and cosmetic contexts. Our discovery programme draws
+            on systematic mapping of bioactive motifs across collagen type I and
+            type III sequences.
           </p>
         </div>
 
