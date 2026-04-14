@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import Characterisation from "@/components/science/characterisation";
 import Challenge from "@/components/science/challenge";
 import OurApproach from "@/components/science/our-approach";
 import PortfolioTeaser from "@/components/science/portfolio-teaser";
@@ -23,7 +24,7 @@ export default function SciencePage() {
         <OurApproach />
         <Research />
         <PortfolioTeaser />
-        {/* TODO: Advantages */}
+        <Characterisation />
         {/* TODO: CtaSection */}
       </main>
       <Footer />
