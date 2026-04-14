@@ -53,7 +53,7 @@ export default function OurApproach() {
         <div className="mb-12 grid grid-cols-1 items-end gap-8 lg:mb-16 lg:grid-cols-2 lg:gap-x-20">
           <div className="min-w-0">
             <SectionLabel variant="sectionCompact">Our approach</SectionLabel>
-            <h2 className={sectionTitle}>
+            <h2 className={`${sectionTitle} mb-6`}>
               How we engineer collagen that works
             </h2>
             <p className="text-base font-light leading-[1.8] text-muted">
