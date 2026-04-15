@@ -13,7 +13,7 @@ export default function Challenge() {
           </h2>
         </div>
 
-        <div>
+        <div className="space-y-6">
           <p className={sectionBody}>
             Collagen is the most studied structural protein in human biology,
             yet translating its receptor-level activity into scalable,

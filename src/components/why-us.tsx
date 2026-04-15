@@ -23,20 +23,23 @@ export default function WhyUs() {
             </h2>
             <div className="mb-6 h-px w-10 bg-pink/40" aria-hidden />
 
-            <p className={sectionBody}>
-              Fibralis was founded on a simple premise: the ingredients that go
-              into tomorrow&apos;s regenerative products deserve the same
-              precision as the products themselves. We combine computational
-              sequence design with scalable{" "}
-              <em className="italic text-cream/75">E. coli</em> expression to
-              deliver recombinant collagen peptides with documented bioactivity,
-              defined composition, and zero animal-derived material.
-            </p>
-            <p className={sectionBody}>
-              Our B2B partners gain access to a stable, audit-ready supply chain
-              — and a scientific team ready to co-develop custom sequences for
-              specific application needs.
-            </p>
+            <div className="space-y-6">
+              <p className={sectionBody}>
+                Fibralis was founded on a simple premise: the ingredients that
+                go into tomorrow&apos;s regenerative products deserve the same
+                precision as the products themselves. We combine computational
+                sequence design with scalable{" "}
+                <em className="italic text-cream/75">E. coli</em> expression to
+                deliver recombinant collagen peptides with documented
+                bioactivity, defined composition, and zero animal-derived
+                material.
+              </p>
+              <p className={sectionBody}>
+                Our B2B partners gain access to a stable, audit-ready supply
+                chain — and a scientific team ready to co-develop custom
+                sequences for specific application needs.
+              </p>
+            </div>
 
             <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
               {STATS.map((stat) => (

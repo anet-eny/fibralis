@@ -19,18 +19,21 @@ export default function OurScience() {
               of Collagen
             </h2>
             <div className="mb-6 h-px w-10 bg-pink/40" aria-hidden />
-            <p className={sectionBody}>
-              Fibralis combines AI-assisted sequence design with precision
-              biomanufacturing to produce recombinant collagen peptides of
-              defined composition and consistent bioactivity. Unlike
-              animal-derived sources, our ingredients are free from biological
-              variability, pathogen risk, and batch-to-batch inconsistency.
-            </p>
-            <p className={sectionBody}>
-              Expressed in <em className="italic text-cream/75">E. coli</em> and
-              rigorously characterised, our peptides deliver documented
-              functionality — enabling formulators to build with confidence.
-            </p>
+            <div className="space-y-6">
+              <p className={sectionBody}>
+                Fibralis combines AI-assisted sequence design with precision
+                biomanufacturing to produce recombinant collagen peptides of
+                defined composition and consistent bioactivity. Unlike
+                animal-derived sources, our ingredients are free from biological
+                variability, pathogen risk, and batch-to-batch inconsistency.
+              </p>
+              <p className={sectionBody}>
+                Expressed in{" "}
+                <em className="italic text-cream/75">E. coli</em> and rigorously
+                characterised, our peptides deliver documented functionality —
+                enabling formulators to build with confidence.
+              </p>
+            </div>
             <div className="mt-2">
               <Button variant="ghost" href="/science">
                 Explore the Science
