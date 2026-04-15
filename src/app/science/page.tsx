@@ -3,6 +3,7 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Characterisation from "@/components/science/characterisation";
 import Challenge from "@/components/science/challenge";
+import CtaSection from "@/components/science/cta-section";
 import OurApproach from "@/components/science/our-approach";
 import PortfolioTeaser from "@/components/science/portfolio-teaser";
 import Research from "@/components/science/research";
@@ -25,7 +26,7 @@ export default function SciencePage() {
         <Research />
         <PortfolioTeaser />
         <Characterisation />
-        {/* TODO: CtaSection */}
+        <CtaSection />
       </main>
       <Footer />
     </>
