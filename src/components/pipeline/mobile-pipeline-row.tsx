@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { ProductTag } from "@/components/ui/product-tag";
 import PipelineDetails from "@/components/pipeline/pipeline-details";
 
@@ -28,8 +29,29 @@ export default function MobilePipelineRow({
   isExpanded,
   onToggle,
 }: MobilePipelineRowProps) {
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const rowRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const rowElement = rowRef.current;
+    if (!rowElement || hasAnimated) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setHasAnimated(true);
+        observer.disconnect();
+      },
+      { threshold: 0.35 },
+    );
+
+    observer.observe(rowElement);
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
   return (
-    <article className="border-b border-border/80 last:border-b-0">
+    <article ref={rowRef} className="border-b border-border/80 last:border-b-0">
       <button
         type="button"
         onClick={onToggle}
@@ -55,7 +77,12 @@ export default function MobilePipelineRow({
 
         <div className="mt-4">
           <div className="h-10 w-[68%] rounded-full bg-border/35 p-1">
-            <div className={`h-full rounded-full ${fillClassName}`} style={{ width: fillWidth }} />
+            <div
+              className={`h-full rounded-full transition-[width] duration-900 ease-out motion-reduce:transition-none ${fillClassName}`}
+              style={{
+                width: hasAnimated ? fillWidth : "0%",
+              }}
+            />
           </div>
           <p className="mt-2 text-[1.05rem] font-normal uppercase tracking-[0.05em] text-cream">
             {stage}

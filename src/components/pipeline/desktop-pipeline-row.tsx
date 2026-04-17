@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { ProductTag } from "@/components/ui/product-tag";
 import PipelineDetails from "@/components/pipeline/pipeline-details";
 
@@ -30,8 +31,29 @@ export default function DesktopPipelineRow({
   isExpanded,
   onToggle,
 }: DesktopPipelineRowProps) {
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const rowRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const rowElement = rowRef.current;
+    if (!rowElement || hasAnimated) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setHasAnimated(true);
+        observer.disconnect();
+      },
+      { threshold: 0.4 },
+    );
+
+    observer.observe(rowElement);
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
   return (
-    <article className="border-b border-border/80 last:border-b-0">
+    <article ref={rowRef} className="border-b border-border/80 last:border-b-0">
       <button
         type="button"
         onClick={onToggle}
@@ -63,8 +85,10 @@ export default function DesktopPipelineRow({
           <div className="pointer-events-none absolute inset-y-0 left-6 right-6 flex items-center">
             <div className="h-14 w-full rounded-full bg-border/35 p-1">
               <div
-                className={`h-full rounded-full ${fillClassName}`}
-                style={{ width: fillWidth }}
+                className={`h-full rounded-full transition-[width] duration-900 ease-out motion-reduce:transition-none ${fillClassName}`}
+                style={{
+                  width: hasAnimated ? fillWidth : "0%",
+                }}
               />
             </div>
           </div>
