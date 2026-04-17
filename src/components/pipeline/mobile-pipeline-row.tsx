@@ -84,9 +84,6 @@ export default function MobilePipelineRow({
               }}
             />
           </div>
-          <p className="mt-2 text-[1.05rem] font-normal uppercase tracking-[0.05em] text-cream">
-            {stage}
-          </p>
         </div>
       </button>
 
