@@ -4,6 +4,12 @@ export const sectionTitle =
 export const sectionBody =
   "text-base font-light leading-[1.8] text-muted";
 
+export const headingLightTight = "font-light tracking-tight text-cream";
+
+export const eyebrowLabel = "text-xs font-medium uppercase text-beige";
+
+export const bodySmallMuted = "text-sm font-light text-muted";
+
 export const sectionLabelClasses = {
   hero: "mb-6 text-xs font-medium uppercase tracking-[0.2em] text-pink",
   sectionMuted:

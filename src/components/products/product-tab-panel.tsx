@@ -4,7 +4,12 @@ import Image from "next/image";
 import { FiDownload } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
 import { ProductTag } from "@/components/ui/product-tag";
-import { scienceCardBody } from "@/lib/typography";
+import {
+  bodySmallMuted,
+  eyebrowLabel,
+  headingLightTight,
+  scienceCardBody,
+} from "@/lib/typography";
 import type { ProductTab } from "./product-tabs-data";
 
 type ProductTabPanelProps = {
@@ -35,7 +40,7 @@ export function ProductTabPanel({ product, baseId }: ProductTabPanelProps) {
 
         <div>
           <ProductTag className="mb-5">{product.tag}</ProductTag>
-          <h2 className="mb-6 text-2xl font-light tracking-tight text-cream md:text-[1.65rem]">
+          <h2 className={`mb-6 text-2xl md:text-[1.65rem] ${headingLightTight}`}>
             {product.name}
           </h2>
           <p className={`${scienceCardBody} mb-10`}>{product.summary}</p>
@@ -43,10 +48,10 @@ export function ProductTabPanel({ product, baseId }: ProductTabPanelProps) {
           <div className="mb-10 space-y-10">
             {product.sections.map((section) => (
               <div key={section.title}>
-                <h3 className="mb-4 text-xs font-medium uppercase tracking-[0.14em] text-beige">
+                <h3 className={`mb-4 tracking-[0.14em] ${eyebrowLabel}`}>
                   {section.title}
                 </h3>
-                <ul className="space-y-2.5 text-sm font-light leading-relaxed text-muted">
+                <ul className={`space-y-2.5 leading-relaxed ${bodySmallMuted}`}>
                   {section.items.map((item) => (
                     <li key={item} className="flex gap-3 pl-0.5">
                       <span
@@ -61,20 +66,20 @@ export function ProductTabPanel({ product, baseId }: ProductTabPanelProps) {
             ))}
           </div>
 
-          <dl className="mb-10 grid gap-4 border-t border-border pt-8 text-sm font-light sm:grid-cols-2">
+          <dl className="mb-10 grid gap-4 border-t border-border pt-8 sm:grid-cols-2">
             <div>
-              <dt className="mb-1 text-xs font-medium uppercase tracking-[0.12em] text-beige">
+              <dt className={`mb-1 tracking-[0.12em] ${eyebrowLabel}`}>
                 Chain length
               </dt>
-              <dd className="text-muted">
+              <dd className={bodySmallMuted}>
                 {product.chainLengthAa} amino acids (~{product.molecularWeightKda} kDa)
               </dd>
             </div>
             <div className="sm:col-span-2">
-              <dt className="mb-1 text-xs font-medium uppercase tracking-[0.12em] text-beige">
+              <dt className={`mb-1 tracking-[0.12em] ${eyebrowLabel}`}>
                 Typical dissolution buffer
               </dt>
-              <dd className="text-muted">{product.buffer}</dd>
+              <dd className={bodySmallMuted}>{product.buffer}</dd>
             </div>
           </dl>
 

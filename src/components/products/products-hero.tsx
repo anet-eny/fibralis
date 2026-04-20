@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { sectionBody } from "@/lib/typography";
+import { headingLightTight, sectionBody } from "@/lib/typography";
 
 export default function ProductsHero() {
   return (
@@ -12,7 +12,9 @@ export default function ProductsHero() {
               Products
             </p>
 
-            <h1 className="mb-7 text-[clamp(2rem,3.2vw,3.2rem)] font-light leading-tight tracking-tight text-cream">
+            <h1
+              className={`mb-7 text-[clamp(2rem,3.2vw,3.2rem)] leading-tight ${headingLightTight}`}
+            >
               Ingredients built for{" "}
               <em className="not-italic text-pink">formulation</em>
             </h1>
