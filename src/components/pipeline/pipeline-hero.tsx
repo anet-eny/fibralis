@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HeroEyebrow } from "@/components/ui/hero-eyebrow";
 import { sectionBody } from "@/lib/typography";
 
 export default function PipelineHero() {
@@ -7,10 +8,7 @@ export default function PipelineHero() {
       <div className="container">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-20">
           <div>
-            <p className="mb-6 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.18em] text-pink">
-              <span className="block h-px w-7 bg-pink opacity-60" aria-hidden />
-              Pipeline
-            </p>
+            <HeroEyebrow>Pipeline</HeroEyebrow>
 
             <h1 className="mb-7 text-[clamp(2rem,3.2vw,3.2rem)] font-light leading-tight tracking-tight text-cream">
               Expanding the collagen sequence space
