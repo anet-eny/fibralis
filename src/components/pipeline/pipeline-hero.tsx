@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { HeroEyebrow } from "@/components/ui/hero-eyebrow";
-import { sectionBody } from "@/lib/typography";
+import { heroTitle, sectionBody } from "@/lib/typography";
 
 export default function PipelineHero() {
   return (
@@ -10,18 +10,20 @@ export default function PipelineHero() {
           <div>
             <HeroEyebrow>Pipeline</HeroEyebrow>
 
-            <h1 className="mb-7 text-[clamp(2rem,3.2vw,3.2rem)] font-light leading-tight tracking-tight text-cream">
-              Expanding the collagen sequence space
+            <h1 className={`mb-7 ${heroTitle}`}>
+              Expanding the collagen{" "}
+              <em className="not-italic text-pink">sequence space</em>
             </h1>
 
             <p className={sectionBody}>
-              Fibralis maintains a focused pipeline of collagen-derived molecules
-              {" "}from validated portfolio assets to early-stage discovery
+              Fibralis maintains a focused pipeline of collagen-derived
+              molecules from validated portfolio assets to early-stage discovery
               programmes targeting receptor interactions and signalling pathways
               largely unexplored in therapeutic and cosmetic contexts. Each
-              candidate is designed <em className="italic text-cream/75">de novo</em>
-              {" "}from a target receptor and a documented active site, not
-              extracted from natural collagen.
+              candidate is designed{" "}
+              <em className="italic text-cream/75">de novo</em> from a target
+              receptor and a documented active site, not extracted from natural
+              collagen.
             </p>
           </div>
 

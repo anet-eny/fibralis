@@ -4,6 +4,9 @@ export const sectionTitle =
 export const sectionBody =
   "text-base font-light leading-[1.8] text-muted";
 
+export const heroTitle =
+  "text-[clamp(2rem,3.2vw,3.2rem)] font-light leading-tight tracking-tight text-cream";
+
 export const headingLightTight = "font-light tracking-tight text-cream";
 
 export const eyebrowLabel = "text-xs font-medium uppercase text-beige";

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { HeroEyebrow } from "@/components/ui/hero-eyebrow";
-import { headingLightTight, sectionBody } from "@/lib/typography";
+import { heroTitle, sectionBody } from "@/lib/typography";
 
 export default function ProductsHero() {
   return (
@@ -10,9 +10,7 @@ export default function ProductsHero() {
           <div>
             <HeroEyebrow>Products</HeroEyebrow>
 
-            <h1
-              className={`mb-7 text-[clamp(2rem,3.2vw,3.2rem)] leading-tight ${headingLightTight}`}
-            >
+            <h1 className={`mb-7 ${heroTitle}`}>
               Ingredients built for{" "}
               <em className="not-italic text-pink">formulation</em>
             </h1>

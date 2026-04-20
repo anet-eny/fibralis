@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { HeroEyebrow } from "@/components/ui/hero-eyebrow";
-import { sectionBody } from "@/lib/typography";
+import { heroTitle, sectionBody } from "@/lib/typography";
 
 export default function ScienceHero() {
   return (
@@ -10,7 +10,7 @@ export default function ScienceHero() {
           <div>
             <HeroEyebrow>Our Science</HeroEyebrow>
 
-            <h1 className="mb-7 text-[clamp(2rem,3.2vw,3.2rem)] font-light leading-tight tracking-tight text-cream">
+            <h1 className={`mb-7 ${heroTitle}`}>
               Precision collagen, engineered from sequence to{" "}
               <em className="not-italic text-pink">function</em>
             </h1>
