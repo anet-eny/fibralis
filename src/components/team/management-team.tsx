@@ -1,11 +1,5 @@
 import Image from "next/image";
-import { SectionLabel } from "@/components/ui/section-label";
-import {
-  bodySmallMuted,
-  headingLightTight,
-  sectionBody,
-  sectionTitle,
-} from "@/lib/typography";
+import { headingLightTight, sectionBody, sectionTitle } from "@/lib/typography";
 
 type TeamMember = {
   name: string;
