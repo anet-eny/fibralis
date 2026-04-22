@@ -92,7 +92,7 @@ export function ProductTabPanel({ product, baseId }: ProductTabPanelProps) {
                 </span>
               </Button>
             </div>
-            <Button variant="primary" showArrow={false}>
+            <Button variant="primary" showArrow={false} href="/contact">
               Request Sample
             </Button>
           </div>
