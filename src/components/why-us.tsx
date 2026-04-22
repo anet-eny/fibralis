@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "@/components/ui/reveal";
 import { SectionLabel } from "@/components/ui/section-label";
 import { sectionBody, sectionTitle } from "@/lib/typography";
 
@@ -12,7 +13,7 @@ const STATS = [
 export default function WhyUs() {
   return (
     <section id="why" className="border-t border-border bg-surface py-section">
-      <div className="container">
+      <Reveal className="container">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <SectionLabel variant="sectionMuted">Why Fibralis</SectionLabel>
@@ -65,7 +66,7 @@ export default function WhyUs() {
             />
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

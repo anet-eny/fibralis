@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { SectionLabel } from "@/components/ui/section-label";
 import { sectionBody, sectionTitle } from "@/lib/typography";
@@ -9,7 +10,7 @@ export default function OurScience() {
       id="science"
       className="border-t border-border bg-surface py-section"
     >
-      <div className="container">
+      <Reveal className="container">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <SectionLabel variant="sectionMuted">Our Science</SectionLabel>
@@ -51,7 +52,7 @@ export default function OurScience() {
             />
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

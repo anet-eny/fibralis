@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "@/components/ui/reveal";
 import { SectionLabel } from "@/components/ui/section-label";
 import { sectionTitle } from "@/lib/typography";
 
@@ -58,18 +59,22 @@ export default function MeetUs() {
   return (
     <section id="meet" className="border-t border-border bg-bg py-section">
       <div className="container">
-        <SectionLabel variant="sectionCompact" className="mb-4">
-          Meet Us
-        </SectionLabel>
-        <h2 className={`${sectionTitle} mb-0`}>
-          Find Us at
-          <br />
-          These Events
-        </h2>
+        <Reveal>
+          <SectionLabel variant="sectionCompact" className="mb-4">
+            Meet Us
+          </SectionLabel>
+          <h2 className={`${sectionTitle} mb-0`}>
+            Find Us at
+            <br />
+            These Events
+          </h2>
+        </Reveal>
 
         <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded border border-border bg-border md:grid-cols-3">
-          {EVENTS.map((event) => (
-            <MeetUsCard key={event.name} event={event} />
+          {EVENTS.map((event, index) => (
+            <Reveal key={event.name} delayMs={index * 120}>
+              <MeetUsCard event={event} />
+            </Reveal>
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "@/components/ui/reveal";
 import { headingLightTight, sectionBody, sectionTitle } from "@/lib/typography";
 
 type TeamMember = {
@@ -64,11 +65,15 @@ export default function ManagementTeam() {
   return (
     <section className="border-b border-border bg-surface py-section">
       <div className="container">
-        <h2 className={`${sectionTitle} mb-12`}>Management Team</h2>
+        <Reveal>
+          <h2 className={`${sectionTitle} mb-12`}>Management Team</h2>
+        </Reveal>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 lg:gap-12">
-          {managementTeam.map((member) => (
-            <ManagementCard key={member.name} member={member} />
+          {managementTeam.map((member, index) => (
+            <Reveal key={member.name} delayMs={index * 120} className="h-full">
+              <ManagementCard member={member} />
+            </Reveal>
           ))}
         </div>
       </div>

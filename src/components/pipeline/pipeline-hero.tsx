@@ -8,14 +8,16 @@ export default function PipelineHero() {
       <div className="container">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-20">
           <div>
-            <HeroEyebrow>Pipeline</HeroEyebrow>
+            <HeroEyebrow className="hero-fade-up hero-fade-up-1">
+              Pipeline
+            </HeroEyebrow>
 
-            <h1 className={`mb-7 ${heroTitle}`}>
+            <h1 className={`hero-fade-up hero-fade-up-2 mb-7 ${heroTitle}`}>
               Expanding the collagen{" "}
               <em className="not-italic text-pink">sequence space</em>
             </h1>
 
-            <p className={sectionBody}>
+            <p className={`hero-fade-up hero-fade-up-3 ${sectionBody}`}>
               Fibralis maintains a focused pipeline of collagen-derived
               molecules from validated portfolio assets to early-stage discovery
               programmes targeting receptor interactions and signalling pathways
@@ -27,7 +29,7 @@ export default function PipelineHero() {
             </p>
           </div>
 
-          <div className="relative aspect-4/3 overflow-hidden rounded border border-border md:aspect-auto md:h-[360px]">
+          <div className="hero-fade-up hero-fade-up-4 relative aspect-4/3 overflow-hidden rounded border border-border md:aspect-auto md:h-[360px]">
             <Image
               src="/images/pipeline-collagen.avif"
               alt="Collagen molecular structure visualisation"

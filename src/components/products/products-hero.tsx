@@ -8,14 +8,16 @@ export default function ProductsHero() {
       <div className="container">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-20">
           <div>
-            <HeroEyebrow>Products</HeroEyebrow>
+            <HeroEyebrow className="hero-fade-up hero-fade-up-1">
+              Products
+            </HeroEyebrow>
 
-            <h1 className={`mb-7 ${heroTitle}`}>
+            <h1 className={`hero-fade-up hero-fade-up-2 mb-7 ${heroTitle}`}>
               Ingredients built for{" "}
               <em className="not-italic text-pink">formulation</em>
             </h1>
 
-            <p className={sectionBody}>
+            <p className={`hero-fade-up hero-fade-up-3 ${sectionBody}`}>
               Three collagen-derived peptides — each with a clear mechanistic
               story, defined manufacturing, and documentation you can take
               straight into development. Pick the profile that matches your
@@ -23,7 +25,7 @@ export default function ProductsHero() {
             </p>
           </div>
 
-          <div className="relative aspect-4/3 overflow-hidden rounded border border-border md:aspect-auto md:h-[360px]">
+          <div className="hero-fade-up hero-fade-up-4 relative aspect-4/3 overflow-hidden rounded border border-border md:aspect-auto md:h-[360px]">
             <Image
               src="/images/products.avif"
               alt="Fibralis peptide portfolio visualisation"

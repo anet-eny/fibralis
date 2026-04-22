@@ -1,4 +1,5 @@
 import { ResearchCard } from "@/components/science/ui/research-card";
+import Reveal from "@/components/ui/reveal";
 import { SectionLabel } from "@/components/ui/section-label";
 import { sectionTitle } from "@/lib/typography";
 
@@ -108,38 +109,40 @@ const researchItems = [
 export default function Research() {
   return (
     <section className="border-b border-border bg-surface py-section">
-      <div className="container">
-        <div className="mb-12 grid grid-cols-1 items-end gap-8 lg:mb-16 lg:grid-cols-[280px_1fr] lg:gap-24">
-          <div>
-            <SectionLabel variant="sectionMuted">Research</SectionLabel>
-            <h2 className={sectionTitle}>
-              Expanding the collagen sequence space
-            </h2>
+      <Reveal className="container">
+        <div>
+          <div className="mb-12 grid grid-cols-1 items-end gap-8 lg:mb-16 lg:grid-cols-[280px_1fr] lg:gap-24">
+            <div>
+              <SectionLabel variant="sectionMuted">Research</SectionLabel>
+              <h2 className={sectionTitle}>
+                Expanding the collagen sequence space
+              </h2>
+            </div>
+
+            <p className="text-base font-light leading-[1.8] text-muted">
+              Beyond our current portfolio, Fibralis is developing a new
+              generation of collagen-derived molecules targeting receptor
+              interactions and signalling pathways that remain largely
+              unexplored in therapeutic and cosmetic contexts. Our discovery
+              programme draws on systematic mapping of bioactive motifs across
+              collagen type I and type III sequences.
+            </p>
           </div>
 
-          <p className="text-base font-light leading-[1.8] text-muted">
-            Beyond our current portfolio, Fibralis is developing a new
-            generation of collagen-derived molecules targeting receptor
-            interactions and signalling pathways that remain largely unexplored
-            in therapeutic and cosmetic contexts. Our discovery programme draws
-            on systematic mapping of bioactive motifs across collagen type I and
-            type III sequences.
-          </p>
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-border bg-border md:grid-cols-2">
+            {researchItems.map((item) => (
+              <ResearchCard
+                key={item.title}
+                stage={item.stage}
+                title={item.title}
+                subtitle={item.subtitle}
+                description={item.description}
+                meta={item.meta}
+              />
+            ))}
+          </div>
         </div>
-
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-border bg-border md:grid-cols-2">
-          {researchItems.map((item) => (
-            <ResearchCard
-              key={item.title}
-              stage={item.stage}
-              title={item.title}
-              subtitle={item.subtitle}
-              description={item.description}
-              meta={item.meta}
-            />
-          ))}
-        </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

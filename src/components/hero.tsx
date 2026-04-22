@@ -142,19 +142,21 @@ export default function Hero() {
       <div className="relative z-10 flex min-h-dvh items-start pt-32 sm:pt-40">
         <div className="container w-full">
           <div className="max-w-lg">
-            <SectionLabel variant="hero">
+            <SectionLabel variant="hero" className="hero-fade-up hero-fade-up-1">
               Recombinant Collagen Ingredients
             </SectionLabel>
-            <h1 className="mb-6 text-[clamp(2.6rem,5vw,4.2rem)] font-light leading-tight tracking-tight text-cream">
+            <h1 className="hero-fade-up hero-fade-up-2 mb-6 text-[clamp(2.6rem,5vw,4.2rem)] font-light leading-tight tracking-tight text-cream">
               <span className="text-pink not-italic">Collagen</span> Without
               Compromise
             </h1>
-            <p className="mb-10 max-w-sm text-base font-light leading-relaxed text-muted">
+            <p className="hero-fade-up hero-fade-up-3 mb-10 max-w-sm text-base font-light leading-relaxed text-muted">
               {HERO_SUB}
             </p>
-            <Button variant="primary" href="/products">
-              Explore Ingredients
-            </Button>
+            <div className="hero-fade-up hero-fade-up-4">
+              <Button variant="primary" href="/products">
+                Explore Ingredients
+              </Button>
+            </div>
           </div>
         </div>
       </div>

@@ -8,14 +8,16 @@ export default function TeamHero() {
       <div className="container">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-20">
           <div>
-            <HeroEyebrow>About us</HeroEyebrow>
+            <HeroEyebrow className="hero-fade-up hero-fade-up-1">
+              About us
+            </HeroEyebrow>
 
-            <h1 className={`mb-7 ${heroTitle}`}>
+            <h1 className={`hero-fade-up hero-fade-up-2 mb-7 ${heroTitle}`}>
               Science-led people building collagen innovation with{" "}
               <em className="not-italic text-pink">purpose</em>
             </h1>
 
-            <p className={sectionBody}>
+            <p className={`hero-fade-up hero-fade-up-3 ${sectionBody}`}>
               Fibralis is a Copenhagen University spin-off developing
               next-generation collagen-derived molecules for cosmetic and
               regenerative applications. We combine computational design,
@@ -25,7 +27,7 @@ export default function TeamHero() {
             </p>
           </div>
 
-          <div className="relative aspect-4/3 overflow-hidden rounded border border-border md:aspect-auto md:h-[360px]">
+          <div className="hero-fade-up hero-fade-up-4 relative aspect-4/3 overflow-hidden rounded border border-border md:aspect-auto md:h-[360px]">
             <Image
               src="/images/our-team-copenhagen.avif"
               alt="Fibralis team in Copenhagen"

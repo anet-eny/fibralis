@@ -3,6 +3,7 @@
 import { useState } from "react";
 import DesktopPipelineRow from "@/components/pipeline/desktop-pipeline-row";
 import MobilePipelineRow from "@/components/pipeline/mobile-pipeline-row";
+import Reveal from "@/components/ui/reveal";
 import { SectionLabel } from "@/components/ui/section-label";
 import { sectionTitle } from "@/lib/typography";
 
@@ -112,35 +113,61 @@ export default function PipelineTable() {
   return (
     <section className="border-b border-border bg-surface py-section">
       <div className="container">
-        <div className="mb-12 lg:mb-16">
-          <div>
-            <SectionLabel variant="sectionMuted">Pipeline</SectionLabel>
-            <h2 className={sectionTitle}>
-              Developing a new generation of collagen-derived molecules
-            </h2>
-          </div>
-        </div>
-
-        <div className="hidden rounded-sm border border-border bg-bg/25 lg:block">
-          <div>
-            <div className="grid grid-cols-[300px_1fr] border-b border-border">
-              <div className="px-6 py-4 text-xs font-medium uppercase tracking-[0.18em] text-beige">
-                Molecule
-              </div>
-              <div className="grid grid-cols-4">
-                {stages.map((stage) => (
-                  <div
-                    key={stage}
-                    className="border-l border-dashed border-border px-4 py-4 text-center text-xs font-medium uppercase tracking-[0.18em] text-beige"
-                  >
-                    {stage}
-                  </div>
-                ))}
-              </div>
+        <Reveal>
+          <div className="mb-12 lg:mb-16">
+            <div>
+              <SectionLabel variant="sectionMuted">Pipeline</SectionLabel>
+              <h2 className={sectionTitle}>
+                Developing a new generation of collagen-derived molecules
+              </h2>
             </div>
+          </div>
+        </Reveal>
 
+        <Reveal delayMs={120}>
+          <div className="hidden rounded-sm border border-border bg-bg/25 lg:block">
+            <div>
+              <div className="grid grid-cols-[300px_1fr] border-b border-border">
+                <div className="px-6 py-4 text-xs font-medium uppercase tracking-[0.18em] text-beige">
+                  Molecule
+                </div>
+                <div className="grid grid-cols-4">
+                  {stages.map((stage) => (
+                    <div
+                      key={stage}
+                      className="border-l border-dashed border-border px-4 py-4 text-center text-xs font-medium uppercase tracking-[0.18em] text-beige"
+                    >
+                      {stage}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {pipelineItems.map((item) => (
+                <DesktopPipelineRow
+                  key={item.molecule}
+                  molecule={item.molecule}
+                  subtitle={item.subtitle}
+                  stage={item.stage}
+                  target={item.target}
+                  application={item.application}
+                  differentiator={item.differentiator}
+                  stages={stages}
+                  stageTagClassName={stageStyleByStage[item.stage]}
+                  fillClassName={fillStyleByStage[item.stage]}
+                  fillWidth={getStageFillWidth(item.stage)}
+                  isExpanded={expandedMolecule === item.molecule}
+                  onToggle={() => toggleExpanded(item.molecule)}
+                />
+              ))}
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal delayMs={180}>
+          <div className="rounded-sm border border-border bg-bg/25 lg:hidden">
             {pipelineItems.map((item) => (
-              <DesktopPipelineRow
+              <MobilePipelineRow
                 key={item.molecule}
                 molecule={item.molecule}
                 subtitle={item.subtitle}
@@ -148,7 +175,6 @@ export default function PipelineTable() {
                 target={item.target}
                 application={item.application}
                 differentiator={item.differentiator}
-                stages={stages}
                 stageTagClassName={stageStyleByStage[item.stage]}
                 fillClassName={fillStyleByStage[item.stage]}
                 fillWidth={getStageFillWidth(item.stage)}
@@ -157,26 +183,7 @@ export default function PipelineTable() {
               />
             ))}
           </div>
-        </div>
-
-        <div className="rounded-sm border border-border bg-bg/25 lg:hidden">
-          {pipelineItems.map((item) => (
-            <MobilePipelineRow
-              key={item.molecule}
-              molecule={item.molecule}
-              subtitle={item.subtitle}
-              stage={item.stage}
-              target={item.target}
-              application={item.application}
-              differentiator={item.differentiator}
-              stageTagClassName={stageStyleByStage[item.stage]}
-              fillClassName={fillStyleByStage[item.stage]}
-              fillWidth={getStageFillWidth(item.stage)}
-              isExpanded={expandedMolecule === item.molecule}
-              onToggle={() => toggleExpanded(item.molecule)}
-            />
-          ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

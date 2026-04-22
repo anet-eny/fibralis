@@ -8,14 +8,16 @@ export default function ScienceHero() {
       <div className="container">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-20">
           <div>
-            <HeroEyebrow>Our Science</HeroEyebrow>
+            <HeroEyebrow className="hero-fade-up hero-fade-up-1">
+              Our Science
+            </HeroEyebrow>
 
-            <h1 className={`mb-7 ${heroTitle}`}>
+            <h1 className={`hero-fade-up hero-fade-up-2 mb-7 ${heroTitle}`}>
               Precision collagen, engineered from sequence to{" "}
               <em className="not-italic text-pink">function</em>
             </h1>
 
-            <p className={sectionBody}>
+            <p className={`hero-fade-up hero-fade-up-3 ${sectionBody}`}>
               Fibralis develops precisely defined collagen proteins and
               bioactive peptides produced in recombinant{" "}
               <em className="italic text-cream/75">E. coli</em> — fully
@@ -24,7 +26,7 @@ export default function ScienceHero() {
             </p>
           </div>
 
-          <div className="relative aspect-4/3 overflow-hidden rounded border border-border md:aspect-auto md:h-[360px]">
+          <div className="hero-fade-up hero-fade-up-4 relative aspect-4/3 overflow-hidden rounded border border-border md:aspect-auto md:h-[360px]">
             <Image
               src="/images/DNA.avif"
               alt="DNA double helix structure"
