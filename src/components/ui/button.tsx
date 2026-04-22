@@ -40,8 +40,16 @@ export type ButtonProps = {
   variant?: "compact" | "primary" | "ghost";
   showArrow?: boolean;
 } & (
-  | { href: string; onClick?: MouseEventHandler<HTMLAnchorElement> }
-  | { href?: undefined; onClick?: MouseEventHandler<HTMLButtonElement> }
+  | {
+      href: string;
+      onClick?: MouseEventHandler<HTMLAnchorElement>;
+      type?: never;
+    }
+  | {
+      href?: undefined;
+      onClick?: MouseEventHandler<HTMLButtonElement>;
+      type?: "button" | "submit" | "reset";
+    }
 );
 
 export function Button({
@@ -50,6 +58,7 @@ export function Button({
   href,
   onClick,
   showArrow = true,
+  type = "button",
 }: ButtonProps) {
   const className = classNameForVariant(variant);
 
@@ -74,7 +83,7 @@ export function Button({
   }
 
   return (
-    <button type="button" onClick={onClick} className={className}>
+    <button type={type} onClick={onClick} className={className}>
       {content}
     </button>
   );
