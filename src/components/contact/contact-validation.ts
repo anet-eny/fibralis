@@ -3,6 +3,7 @@ export const categoryOptions = [
   "Scientist",
   "Media",
   "Request sample",
+  "Career",
   "Other",
 ] as const;
 
