@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Logo from "@/components/logo";
 import { Button } from "@/components/ui/button";
 
@@ -17,6 +18,18 @@ const linkClass =
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  function handleLogoClick(event: React.MouseEvent<HTMLAnchorElement>) {
+    setOpen(false);
+
+    if (pathname !== "/") {
+      return;
+    }
+
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 
   return (
     <nav
@@ -28,7 +41,7 @@ export default function Navbar() {
           href="/"
           className="flex shrink-0 items-center"
           aria-label="Fibralis home"
-          onClick={() => setOpen(false)}
+          onClick={handleLogoClick}
         >
           <Logo className="h-9 w-auto shrink-0 text-cream" />
         </Link>
