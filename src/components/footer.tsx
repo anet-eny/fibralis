@@ -11,10 +11,10 @@ export default function Footer() {
         <div>
           <Logo className="h-9 w-auto shrink-0 text-cream" />
           <a
-            href="mailto:hello@fibralis.com"
+            href="mailto:contact@fibralis.com"
             className="mt-4 block text-sm font-light text-muted transition-colors hover:text-cream"
           >
-            hello@fibralis.com
+            contact@fibralis.com
           </a>
         </div>
 
