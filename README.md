@@ -2,13 +2,7 @@
 
 Portfolio website for a fictional B2B biotech company specialising in recombinant collagen peptide ingredients for cosmetic, cosmeceutical, and medical applications.
 
-Built with Next.js 15, TypeScript, and Tailwind v4. Dark-themed, multi-page site with a parallax hero, product portfolio, team pages, and contact form.
-
-## Stack
-
-- Next.js 16 · App Router
-- TypeScript
-- Tailwind v4
+Built with Next.js 16, TypeScript, and Tailwind v4. Dark-themed, multi-page site with a parallax hero, product portfolio, team page, and contact form.
 
 ## Key Learnings
 
