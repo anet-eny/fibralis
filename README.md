@@ -1,29 +1,21 @@
-# Blank starter
+# Fibralis
 
-Minimal, production-ready baseline for a new Next.js + TypeScript + Tailwind v4 project.
+Portfolio website for a fictional B2B biotech company specialising in recombinant collagen peptide ingredients for cosmetic, cosmeceutical, and medical applications.
 
-## Scripts
+Built with Next.js 15, TypeScript, and Tailwind v4. Dark-themed, multi-page site with a parallax hero, product portfolio, team pages, and contact form.
 
-```bash
-npm run dev
-npm run build
-npm run start
-npm run lint
-```
+## Stack
 
-## Project structure
+- Next.js 16 · App Router
+- TypeScript
+- Tailwind v4
 
-- `src/app/layout.tsx`: App shell + metadata
-- `src/app/page.tsx`: Home page ("New Project")
-- `src/app/globals.css`: Tailwind v4 entrypoint
+## Key Learnings
 
-## TODO (new project checklist)
-
-- [ ] Define product requirements and routes
-- [ ] Add environment variables (`.env.local`) and validation strategy
-- [ ] Add authentication and authorization model
-- [ ] Choose database and migrations strategy
-- [ ] Add logging/monitoring and error reporting
-- [ ] Add CI (lint/build/test) and deployment pipeline
-- [ ] Add tests (unit/integration/e2e) and test data strategy
-- [ ] Add security headers, CSP, and basic hardening
+- Prototyping with Claude — iterating on layout, copy, and design decisions directly in chat before writing any code
+- Building a design system — color palette in oklch, typography tokens, spacing scale, and consistent component patterns
+- Next.js & TypeScript fundamentals — App Router, multi-page structure, layouts, and font loading
+- Working with an AI agent in Cursor — structuring prompts, one component per session, reviewing generated code
+- Project planning — defining page structure, component hierarchy, and file naming conventions before starting
+- Writing rules for AI — CLAUDE.md as a context file that guides the agent throughout the project
+- Effective prompting — being specific about constraints, referencing the prototype, and iterating on output
