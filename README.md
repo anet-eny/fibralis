@@ -19,3 +19,7 @@ Built with Next.js 15, TypeScript, and Tailwind v4. Dark-themed, multi-page site
 - Project planning — defining page structure, component hierarchy, and file naming conventions before starting
 - Writing rules for AI — CLAUDE.md as a context file that guides the agent throughout the project
 - Effective prompting — being specific about constraints, referencing the prototype, and iterating on output
+
+## View Project
+
+https://fibralis.vercel.app/
